@@ -9,4 +9,8 @@ RUN ls
 
 COPY . /PortfolioRebalancer
 
-CMD ["python", "PortfolioRebalancingTool.py"]
+EXPOSE 8501
+
+# CMD ["python", "PortfolioRebalancingTool.py"]
+
+ENTRYPOINT ["streamlit", "run", "PortfolioRebalancingTool.py", "--server.port=8501", "--server.address=0.0.0.0"]

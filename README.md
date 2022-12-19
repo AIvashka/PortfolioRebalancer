@@ -37,3 +37,13 @@ Service that proposes portfolio rebalancing trades
       3. Add authentication to streamlit app
       4. Set up a database to store user data
       
+
+RUN:
+
+docker rm -f streamlit_app
+docker build -f Dockerfile -t streamlit_app_image .
+docker run -d --name streamlit_app -p 8501:8501 streamlit_app_image
+
+Currently deployed on EC2 AWS Instance
+
+http://35.79.131.185:8501/
